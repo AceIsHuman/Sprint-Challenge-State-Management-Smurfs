@@ -9,12 +9,12 @@ const SmurfList = props => {
 
   useEffect(() => {
     loadSmurfs();
-  }, [smurfs])
+  }, [])
 
   return (
     <Card.Group centered>
       {smurfs.map(smurf => (
-        <SmurfCard smurf={smurf} />
+        <SmurfCard key={smurf.id} smurf={smurf} />
       ))}
     </Card.Group>
   )
