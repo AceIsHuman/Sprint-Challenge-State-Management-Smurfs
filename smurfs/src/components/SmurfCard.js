@@ -12,7 +12,7 @@ const SmurfCard = props => {
         <Card.Header>{smurf.name}</Card.Header>
         <Card.Meta>Height: {smurf.height}</Card.Meta>
         <Card.Description>{smurf.name} is {smurf.age} years old!</Card.Description>
-        <Icon name="trash alternate outline" onClick={() => deleteSmurf(smurf.id)}/>
+        <Icon className="delete" name="trash alternate outline" onClick={() => deleteSmurf(smurf.id)}/>
       </Card.Content>
     </Card>
   )
