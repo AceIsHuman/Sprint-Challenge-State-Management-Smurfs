@@ -1,19 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addSmurf } from '../actions';
 
 const NewSmurfForm = props => {
+  const { addSmurf } = props;
   const [data, setData] = useState({
     name: '',
     age: '',
     height: '' 
   })
 
+  const handleChanges = e => {
+    setData({...data, [e.target.name]: e.target.value})
+  }
+
   return (
-    <form>
-      <input type="text" name="name" placeholder="Smurf Name" />
-      <input type="text" name="age" placeholder="Age" />
-      <input type="text" name="height" placeholder="Height" />
+    <form onSubmit={ addSmurf }>
+      <input type="text" name="name" placeholder="Smurf Name" onChange={handleChanges} />
+      <input type="text" name="age" placeholder="Age" onChange={handleChanges} />
+      <input type="text" name="height" placeholder="Height" onChange={handleChanges} />
     </form>
   )
 }
 
-export default NewSmurfForm;
+export default connect(null, { addSmurf })(NewSmurfForm);
