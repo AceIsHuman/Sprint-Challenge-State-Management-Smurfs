@@ -18,6 +18,7 @@ const NewSmurfForm = props => {
     <form onSubmit={e => {
       e.preventDefault();
       addSmurf(data)
+      setData({name: '', age: '', height: ''})
       } }>
       <input type="text" name="name" placeholder="Smurf Name" onChange={handleChanges} />
       <input type="text" name="age" placeholder="Age" onChange={handleChanges} />
